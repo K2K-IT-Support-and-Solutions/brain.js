@@ -1,0 +1,116 @@
+{
+  "name": "k2kbrain.js",
+  "version": "2.0.0-beta.24",
+  "description": "Neural networks in JavaScript",
+  "main": "dist/index.js",
+  "types": "dist/",
+  "browser": "dist/browser.js",
+  "files": ["dist/"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/K2K-IT-Support-and-Solutions/brain.js.git"
+  },
+  "author": {
+    "name": "Pitesh Dixit",
+    "email": "cto.pitesh@k2kitsupport.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ai",
+    "artificial-intelligence",
+    "brain",
+    "brainjs",
+    "k2kbrain.js",
+    "feed forward",
+    "neural network",
+    "classifier",
+    "neural",
+    "network",
+    "neural-networks",
+    "machine-learning",
+    "synapse",
+    "recurrent",
+    "long short term memory",
+    "gated recurrent unit",
+    "time series",
+    "time step",
+    "prediction",
+    "rnn",
+    "lstm",
+    "gru"
+  ],
+  "engines": {
+    "node": ">=8.6.x"
+  },
+  "dependencies": {
+    "thaw.js": "^2.1.4"
+  },
+  "peerDependencies": {
+    "gpu.js": "^2.16.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.13.0",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-typescript": "^8.2.0",
+    "@types/eslint": "^7.2.4",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^14.14.2",
+    "@types/prettier": "^2.1.5",
+    "@types/rollup-plugin-node-builtins": "^2.1.1",
+    "@types/rollup-plugin-node-globals": "^1.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "acorn": "^8.0.4",
+    "c8": "^7.3.4",
+    "codecov": "^3.8.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-config-standard": "^15.0.0",
+    "eslint-config-standard-with-typescript": "^19.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "fast-xml-parser": "^3.17.4",
+    "gpu-mock.js": "^1.3.1",
+    "gpu.js": "^2.15.2",
+    "husky": "^4.3.0",
+    "jest": "^26.6.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "rimraf": "^6.0.0",
+    "rollup": "^2.39.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^26.4.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "build": "run-p build:**",
+    "build:browser": "rollup -c rollup.config.browser.js",
+    "build:node": "rollup -c rollup.config.js",
+    "build:ts": "tsc --declaration --emitDeclarationOnly --declarationMap",
+    "clean": "rimraf ./dist",
+    "coverage": "jest --coverage --coverage-provider v8 && codecov",
+    "dist": "npm run build",
+    "lint": "run-p lint:**",
+    "lint:eslint": "eslint --fix --ext .js,.ts src",
+    "lint:typecheck": "tsc --noEmit",
+    "prepare": "npm run clean && npm run build",
+    "test": "jest",
+    "watch": "run-p watch:**",
+    "watch:node": "rollup -c rollup.config.js -w",
+    "watch:test": "jest --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
